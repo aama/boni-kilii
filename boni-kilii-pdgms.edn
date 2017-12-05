@@ -5,21 +5,21 @@
  :datasource "Heine1982"
  :geodemoURL "http://www.ethnologue.com/language/bob"
  :geodemoTXT "Kilii is a variety of NorthernBoni. The material archived here is from a dialect study by Bernd Heine published in 1982, and is based the speech of one person, who spent most of his life in the town of Badada in South-eastern Somalia."
- :schemata {:cliticClass [:Ablative  :Causative :Comitative :Focus :Goal :Medial :Passive :Reflexive :Ventive],
+ :schemata {:vmorphClass [:AspectSuff  :NegativeAffix :SubjMarkers :VCLITICS :VNoun :VSTEMImperf :VSTEMPerf],
+            :cliticClass [:Ablative :Causative :Comitative :Focus :Goal :Medial :Passive :Reflexive :Ventive],
             :cliticType [:DervSuff :Proclitic],
             :conjClass [:Copula :DeAdjectival :Prefix :Suffix :SuffixClass],
-            :conjSubClass [:Become :Make :S_1 :S_2 :S_3 :S_4],
+            :conjSubClass [:Become :Copula :Make :S_1 :S_2 :S_3 :S_4 :NA :S-2],
             :formType [:Affix :Clitic :Suffix],
             :gender [:Common :Fem :Masc],
             :mood [:Subjunctive],
             :number [:Common :Plural :Singular :_NA],
-            :person [:Person1 :Person2 :Person3 :Unmarked :_NA],
+            :person [:Person1 :Person2 :Person3 :_NA],
             :polarity [:Affirmative :Negative],
             :pos [:Pronoun :Verb],
             :proClass [:Possessive],
-            :tam [:Imperative :Imperfect :ImperfectHabitual :ImperfectProgressive :Infinitive :Perfect :PerfectHabitual :PerfectProgressive],
-            :tknType [:Copula]
-            :pdgmType [:Finite :NegativeAffix :SubjMarkers :VNoun :VSTEM :AspectSuff :PRO :VCLITICS]}
+            :tam [:Imperative :Imperfect :ImperfectHabitual :ImperfectProgressive :Infinitive :Perfect :PerfectHabitual :PerfectProgressive]
+            :pdgmType [:Finite :PRO :VOther]}
  :pclass {:pngClass [:person :number :gender],
           :synsemClass [:case :derivedStem :polarity :pos :proClass :tam],
           :inflClass [:conjClass],
@@ -190,18 +190,6 @@
                     [:Plural :Person1 :Common "wə́-wiin-eey-nə"],
                     [:Plural :Person2 :Common "wə́-wiin-ees-séè"],
                     [:Plural :Person3 :Common "wə́-wiin-eey-éè"]]
-            }
-           {:label "boni_K-VInfinitiveBecome-wiin"
-            :note "Heine1982 2.26.63"
-            :pdgmType :VNoun
-            :common {:conjSubClass :Become,
-                     :gender :Common,
-                     :lexeme :wiin,
-                     :pos :Verb,
-                     :tam :Infinitive,
-                     :conjClass :DeAdjectival}
-            :terms [[:token],
-                    ["wiin-aa-‘ó"]]
             }
            {:label "boni_K-VNegImperf-ahai"
             :note "Heine1982 2.26.62"
@@ -714,159 +702,53 @@
                     [:Plural :Person2 :Common "ado mə́-‘ahám-sen-ne"],
                     [:Plural :Person3 :Common "iyo mə́-‘ahám-sen-ne"]]
             }
-           {:label "boni_K-VPrefImperf-aal"
+           {:label "boni_K-VPrefImperf-VSTEN"
             :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :aal,
-                     :person :Unmarked,
+            :pdgmType :VOther
+            :common {:vmorphClass :VSTEMImperf
+                     :conjClass :Prefix,
                      :pos :Verb,
                      :tam :Imperfect}
-            :terms [[:token],
-                    ["-aal-"]]
+            :terms [[:lexeme :token],
+                    [:aal "-aal-"]
+                    [:aham, "-aham-"]
+                    [:igaas "-igaas-"]
+                    [:erah, "-erah-"]
+                    [:imaad, "-imaad / ibaad-"]
+                    [:iraar, "-iɽaar-"]
+                    [:uwaad, "-uwaad-"]]
             }
-           {:label "boni_K-VPrefImperf-aham"
+           {:label "boni_K-VPrefPerf-VSTEM"
             :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :aham,
-                     :person :Unmarked,
+            :pdgmType :VOther
+            :common {:vmorphClass :VSTEMPerf
+                     :conjClass :Prefix,
                      :pos :Verb,
-                     :tam :Imperfect}
-            :terms [[:token],
-                    ["-aham-"]]
+                     :tam :Perfect}
+            :terms [[:lexeme :token],
+                    [:all "-iil-"]
+                    [:aham, "-uhum-"]
+                    [:igaas, "-igis-"]
+                    [:imaad, "-imid / ibid-"]
+                    [:iraar, "-iɽaar"]
+                    [:uwaad, "-uwud-"]]
             }
-           {:label "boni_K-VPrefImperf-erah"
+           {:label "boni_K-VPrefInfinitive-VNoun"
             :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :erah,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Imperfect}
-            :terms [[:token],
-                    ["-erah-"]]
-            }
-           {:label "boni_K-VPrefImperf-igaas"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :igaas,
-                     :pos :Verb,
-                     :tam :Imperfect}
-            :terms [[:token],
-                    ["-igaas-"]]
-            }
-           {:label "boni_K-VPrefImperf-imaad"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :imaad,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Imperfect}
-            :terms [[:token],
-                    ["-imaad / ibaad-"]]
-            }
-           {:label "boni_K-VPrefImperf-iraar"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :iraar,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Imperfect}
-            :terms [[:token],
-                    ["-iɽaar-"]]
-            }
-           {:label "boni_K-VPrefImperf-uwaad"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :uwaad,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Imperfect}
-            :terms [[:token],
-                    ["-uwaad-"]]
-            }
-           {:label "boni_K-VPrefInfinitive-aham"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :aham,
-                     :person :Unmarked,
+            :pdgmType :VOther
+            :common {:vmorphClass :VNoun
                      :pos :Verb,
                      :tam :Infinitive}
-            :terms [[:token],
-                    ["aham-ó / aham-tíí"]]
-            }
-           {:label "boni_K-VPrefInfinitive-erah"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :erah,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["erah-ó"]]
-            }
-           {:label "boni_K-VPrefInfinitive-igaas"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :igaas,
-                     :pos :Verb,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["igaas-ó"]]
-            }
-           {:label "boni_K-VPrefInfinitive-imaad"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :imaad,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["imaad-ó"]]
-            }
-           {:label "boni_K-VPrefInfinitive-iraar"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :iraar,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["iɽaar-ó"]]
-            }
-           {:label "boni_K-VPrefInfinitive-uwaad"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VNoun
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :uwaad,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["kéérə / uwáád-a"]]
+            :terms [[:conjSubClass :conjClass :lexeme :token],
+                    [:NA :Prefix :aham "aham-ó / aham-tíí"]
+                    [:NA :Prefix :erah "erah-"]
+                    [:NA :Prefix :igaas "igaas-ó"]
+                    [:NA :Prefix :imaas "imaad-ó"]
+                    [:NA :Prefix :iraar "iɽaar-ó"]
+                    [:NA :Prefix :uwaad "kéérə / uwáád-a"]
+                    [:S-2 :Suffix :kava "k’ab-an-nó"]
+                    [:S_3 :Suffix :siiy "sííy-ó"]
+                    [:Become :DeAdjectival :wiin "wiin-aa-‘ó"]]
             }
            {:label "boni_K-VPrefNegImperf-aal"
             :note "Heine1982 2.26.61"
@@ -1175,90 +1057,6 @@
                     [:Plural :Person1 :Common "unə mú-‘uwaan-ne"],
                     [:Plural :Person2 :Common "adoə mú-‘uwaan-ne"],
                     [:Plural :Person3 :Common "iyoə mú-‘uwaan-ne"]]
-            }
-           {:label "boni_K-VPrefPerf-aal"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :aal,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-iil-"]]
-            }
-           {:label "boni_K-VPrefPerf-aham"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :aham,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-uhum-"]]
-            }
-           {:label "boni_K-VPrefPerf-erah"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :erah,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-ereh-"]]
-            }
-           {:label "boni_K-VPrefPerf-igaas"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :igaas,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-igis-"]]
-            }
-           {:label "boni_K-VPrefPerf-imaad"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :imaad,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-imid / ibid-"]]
-            }
-           {:label "boni_K-VPrefPerf-iraar"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :iraar,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-iɽaar"]]
-            }
-           {:label "boni_K-VPrefPerf-uwaad"
-            :note "Heine1982 2.26.61"
-            :pdgmType :VSTEM
-            :common {:conjClass :Prefix,
-                     :gender :Common,
-                     :lexeme :uwaad,
-                     :person :Unmarked,
-                     :pos :Verb,
-                     :tam :Perfect}
-            :terms [[:token],
-                    ["-uwud-"]]
             }
            {:label "boni_K-VPrefProgNegImperf-igaas"
             :note "Heine1982 2.26.42.1"
@@ -1778,19 +1576,6 @@
                     [:Plural :Person2 :Common "wá-k’aba-ttéè"],
                     [:Plural :Person3 :Common "wá-k’aba-déè"]]
             }
-           {:label "boni_K-VSuff2Infinitive-kaba"
-            :note "Heine1982 2.26.62"
-            :pdgmType :VNoun
-            :common {:gender :Common,
-                     :conjSubClass :S_2,
-                     :conjClass :Suffix,
-                     :lexeme :kaba,
-                     :pos :Verb,
-                     :person :Unmarked,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["k’ab-an-nó"]]
-            }
            {:label "boni_K-VSuff2NegImperf-kaba"
             :note "Heine1982 2.26.62"
             :pdgmType :Finite
@@ -1985,19 +1770,6 @@
                     [:Plural :Person1 :Common "un mə́-karíy-sen-ne"],
                     [:Plural :Person2 :Common "ado mə́-karíy-sen-ne"],
                     [:Plural :Person3 :Common "iyo mə́-karíy-sen-ne"]]
-            }
-           {:label "boni_K-VSuff3Infinitive-siiy"
-            :note "Heine1982 2.26.62"
-            :pdgmType :VNoun
-            :common {:gender :Common,
-                     :conjSubClass :S_3,
-                     :conjClass :Suffix,
-                     :lexeme :siiy,
-                     :pos :Verb,
-                     :person :Unmarked,
-                     :tam :Infinitive}
-            :terms [[:token],
-                    ["sííy-ó"]]
             }
            {:label "boni_K-VSuff3NegImperf-siiy"
             :note "Heine1982 2.26.62"
@@ -2281,8 +2053,9 @@
             }
            {:label "boni_K-VAspect"
             :note "Heine1982 2.26.4; [add in Progressive and Habitual!]"
-            :pdgmType :AspectSuff
-            :common {:pos :Verb}
+            :pdgmType :VOther
+            :common {:vmorphClass :AspectSuff
+                     :pos :Verb}
             :terms [[:polarity :tam :number :token],
                     [:Affirmative :Imperfect :Singular "-à"],
                     [:Affirmative :Imperfect :Plural "-úù"],
@@ -2294,8 +2067,9 @@
             }
            {:label "boni_K-VClitics"
             :note "Heine1982 2.26.7"
-            :pdgmType :VCLITICS
-            :common {:pos :Verb,
+            :pdgmType :VOther
+            :common {:vmorphClass :VCLITICS
+                     :pos :Verb,
                      :formType :Clitic}
             :terms [[:cliticClass :cliticType :number :person :token :token-note],
                     [:Ablative :Proclitic :_NA :_NA "kí́-" "_NULL"],
@@ -2322,8 +2096,9 @@
             }
            {:label "boni_K-VNeg"
             :note "Heine1982 2.26.3. These affixes involve both a prefix and a suffix."
-            :pdgmType :NegativeAffix
-            :common {:pos :Verb,
+            :pdgmType :VOther
+            :common {:vmorphClass :NegativeAffix
+                     :pos :Verb,
                      :formType :Affix}
             :terms [[:tam :number :token],
                     [:Imperative :Singular "hà- -nè"],
@@ -2336,8 +2111,9 @@
            {:label "boni_K-VSuffSubjMarkers"
             :note "Heine1982 2.26.62. The suffix conjugation sub-classes are:I basic,II medial,III
             causative,IV nasal."
-            :pdgmType :SubjMarkers
-            :common {:pos :Verb,
+            :pdgmType :VOther
+            :common {:vmorphClass :SubjMarkers
+                     :pos :Verb,
                      :formType :Suffix}
             :terms [[:conjClass :number :person :gender :token],
                     [:Suffix :Singular :Person1 :Common "Common"],
